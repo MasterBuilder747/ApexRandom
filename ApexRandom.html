@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+ <title>ApexRandom.html</title>
+ <style type = "text/css">
+ fieldset {
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+ }
+ label {
+  float: left;
+  width: 250px;
+  text-align: right;
+  margin-right: 1em;
+  clear: left;
+ }
+ span {
+  float: left;
+ }
+ button {
+  display: block;
+  clear: both;
+  margin: auto;
+ }
+ </style>
+ <script type = "text/javascript">
+ var legends = [
+        "Wraith",
+        "Bangalore",
+        "Gibraltar",
+        "Lifeline",
+        "Pathfinder",
+        "Bloodhound",
+        "Mirage",
+        "Caustic",
+        "Octane", //s1
+        "Wattson", //s2
+        "Crypto", //s3
+        "Revenant", //s4
+        "Loba", //s5
+        "Rampart", //s6
+        "Horizon" //s7
+ ];
+ var map_worlds = [
+                "Bloodhound's Trials",
+                "Countdown",
+                "Fragment East",
+                "Fragment West", //mid
+                "Harvester",
+                "Hill Valley", //low
+                "Launch Site",
+                "Lava City",
+                "Lava Fissure",
+                "Overlook",
+                "Refinery",
+                "Staging",
+                "Sorting Factory",
+                "Spring's End", //mid
+                "Survey Camp",
+                "Thermal Station",
+                "The Bridge", //low
+                "The Dome",
+                "The Epicenter",
+                "The Geyser",
+                "The Mining Pass", //low
+                "The Rain Tunnel", //low
+                "The Tree",
+                "The Train Yard"
+ ];
+ var map_olympus = [
+                "Agriculture Entry", //low
+                "Antechamber", //low
+                "Autumn Estates",
+                "Bonzai Plaza", //mid
+                "Arcadia Supercarrier",
+                "Cargo Hold", //low
+                "Central Turbine", //mid
+                "Crossroads", //low
+                "Defense Perimeter", //low
+                "Docks",
+                "Elysium",
+                "Energy Depot",
+                "Farmstead", //low
+                "Grow Towers", //mid
+                "Golden Gardens", //mid
+                "Hammond Labs", //mid
+                "Hydroponics", //?
+                "Ivory Pass", //low
+                "Lab Annex", //low
+                "Maintenance", //low
+                "Orbital Cannon Test Site",
+                "Phase Gateway Central", //low
+                "Phase Gateway West", //low
+                "Primary Power Grid", //mid
+                "Rift Aftermath",
+                "Research Basin",
+                "Secondary Power Grid", //low
+                "Shipyard", //low
+                "Solar Array", //mid
+                "Supply Track", //low
+                "The Reverie Lounge",
+                "Underpass", //low
+                "Velvet Oasis", //mid
+                "Welcome Center", //low
+                "Wildflower Meadow" //low
+ ];
+ function roll() {
+  //create variables for form elements
+  var spnRaw = document.getElementById("spnRaw");
+  var spn100 = document.getElementById("spn100");
+  var spnFinal = document.getElementById("spnFinal");
+  //get random number
+  spnRaw.innerHTML = legends[Math.floor(Math.random() * legends.length)];
+  //multiply by 100
+  spn100.innerHTML = map_worlds[Math.floor(Math.random() * map_worlds.length)];
+  //get the ceiling
+  spnFinal.innerHTML = map_olympus[Math.floor(Math.random() * map_olympus.length)];
+ } // end roll
+ </script>
+</head>
+<body>
+ <h1>Apex Randomizer</h1>
+ <form>
+  <fieldset>
+   <label>Legend: </label>
+   <span id = "spnRaw">0</span>
+   <label>Olympus: </label>
+   <span id = "spn100">0</span>
+   <label>World's Edge: </label>
+   <span id = "spnFinal">0</span>
+   <button type = "button"
+     onclick = "roll()">
+    New Game
+   </button>
+  </fieldset>
+ </form>
+</body>
+</html>
